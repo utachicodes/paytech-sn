@@ -109,6 +109,10 @@ app.post("/ipn", (req, res) => {
 });
 ```
 
+### Tracking partial / installment payments
+
+PayTech has no native installment plan: every `requestPayment` call is one complete checkout. To track a balance paid across several transactions (e.g. a tuition invoice paid 5000 now, 1000 later), keep an `Invoice`/`Payment` ledger in your own database, give each installment its own unique `refCommand`, and update `amountPaid` from `verifyIpn` idempotently per `refCommand`. See [examples/tuition-installments.ts](examples/tuition-installments.ts) for the full pattern.
+
 ### Why two HMAC formulas
 
 PayTech signs payment and transfer events differently:
