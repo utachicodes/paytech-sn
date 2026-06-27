@@ -4,7 +4,7 @@
 [![npm version](https://img.shields.io/npm/v/paytech-sn.svg)](https://www.npmjs.com/package/paytech-sn)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6.svg)](tsconfig.json)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D18-339933.svg)](package.json)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D20-339933.svg)](package.json)
 
 A typed Node.js and TypeScript client for the [PayTech](https://paytech.sn) payment gateway used across Senegal, Cote d'Ivoire, Mali, and Benin. It covers checkout requests, IPN signature verification, transfers, refunds, and SMS, with zero runtime dependencies.
 
@@ -28,7 +28,7 @@ The SDK itself is framework-agnostic: it is plain TypeScript built on the native
 npm install paytech-sn
 ```
 
-Requires Node.js 18 or later (uses the global `fetch` and `crypto` APIs).
+Requires Node.js 20 or later (the test toolchain requires it; the SDK runtime itself only needs the global `fetch` and `crypto` APIs available since Node 18).
 
 ## Quick start
 
